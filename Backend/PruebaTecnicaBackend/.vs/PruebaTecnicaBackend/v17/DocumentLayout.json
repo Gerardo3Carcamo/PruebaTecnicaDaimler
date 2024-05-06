@@ -71,8 +71,7 @@
               "RelativeToolTip": "PruebaTecnicaBackend\\appsettings.json",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-05-06T04:41:16.445Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-06T04:41:16.445Z"
             },
             {
               "$type": "Document",
@@ -84,8 +83,7 @@
               "RelativeToolTip": "PruebaTecnicaBackend\\Program.cs",
               "ViewState": "AQIAAAgAAAAAAAAAAAAwwBcAAAA1AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-04T16:16:31.377Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-04T16:16:31.377Z"
             },
             {
               "$type": "Document",
@@ -97,8 +95,7 @@
               "RelativeToolTip": "PruebaTecnicaBackend\\ApplicationDBContext.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAuwAkAAAAZAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-04T16:08:41.153Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-04T16:08:41.153Z"
             },
             {
               "$type": "Document",
@@ -110,8 +107,7 @@
               "RelativeToolTip": "PruebaTecnicaBackend\\Controllers\\DashboardController.cs",
               "ViewState": "AQIAAAgAAAAAAAAAAIA4wBgAAABfAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-06T01:59:52.884Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-06T01:59:52.884Z"
             },
             {
               "$type": "Document",
@@ -123,8 +119,7 @@
               "RelativeToolTip": "PruebaTecnicaBackend\\Controllers\\MedicineController.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAFYAAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-05T18:12:52.347Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-05T18:12:52.347Z"
             },
             {
               "$type": "Document",
@@ -136,8 +131,7 @@
               "RelativeToolTip": "PruebaTecnicaBackend\\Controllers\\PrescriptionController.cs",
               "ViewState": "AQIAAAsAAAAAAAAAAAA3wCIAAABIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-05T04:01:17.654Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-05T04:01:17.654Z"
             },
             {
               "$type": "Document",
@@ -162,8 +156,7 @@
               "RelativeToolTip": "PruebaTecnicaBackend\\Controllers\\Methods\\LoginMethods.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-06T02:57:51.675Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-06T02:57:51.675Z"
             }
           ]
         }
