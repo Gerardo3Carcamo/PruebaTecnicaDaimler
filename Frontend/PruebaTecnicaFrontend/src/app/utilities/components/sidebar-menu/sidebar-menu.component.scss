@@ -1,0 +1,128 @@
+ul {
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    list-style: none;
+    padding: 0;
+}
+.menu div {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    overflow-x: hidden;
+}
+.container span {
+    display: flex;
+    align-items: center;
+    overflow-x: hidden;
+    font-size: 1.4rem;
+}
+fa-icon {
+    margin-right: 0.5rem;
+    font-size: 1.4rem;
+}
+.container span fa-icon {
+    margin-right: 0.2rem;
+}
+.container span li {
+    padding-left: 0.5rem;
+}
+
+.hover-effect::before {
+    background: var(--primary-color);
+    content: "";
+    inset: 0;
+    position: absolute;
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 0.5s ease-in-out;
+    z-index: -1;
+}
+.hover-effect:hover::before {
+    transform: scaleY(1);
+    transform-origin: top;
+    color: var(--primary-color-text);
+}
+.hover-effect:hover {
+    color: var(--primary-color-text);
+    transition: color 0.3s ease-in-out;
+    transform-origin: top;
+}
+.hover-effect {
+    position: relative;
+    text-decoration: none;
+    cursor: pointer;
+    padding: 1.5rem;
+    width: 100%;
+    transition: color 0.4s ease-in-out;
+    transform-origin: left;
+    color: var(--text-color);
+}
+
+.hover-effect-disabled::before {
+    background: #c8c8c9;
+    content: "";
+    inset: 0;
+    position: absolute;
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 0.5s ease-in-out;
+    z-index: -1;
+}
+.hover-effect-disabled:hover::before {
+    transform: scaleY(1);
+    transform-origin: top;
+    color: black;
+}
+.hover-effect-disabled:hover {
+    color: black;
+    transition: color 0.3s ease-in-out;
+    transform-origin: top;
+}
+.hover-effect-disabled {
+    position: relative;
+    text-decoration: none;
+    cursor: pointer;
+    padding: 1.5rem;
+    width: 100%;
+    transition: color 0.4s ease-in-out;
+    transform-origin: left;
+}
+.span {
+    position: relative;
+    text-decoration: none;
+    cursor: pointer;
+    padding: 1.5rem;
+    width: 100%;
+}
+
+.hover-effect-logout::before {
+    background: #dc2626;
+    content: "";
+    inset: 0;
+    position: absolute;
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 0.5s ease-in-out;
+    z-index: -1;
+}
+.hover-effect-logout:hover::before {
+    transform: scaleY(1);
+    transform-origin: top;
+    color: #dc2626;
+}
+.hover-effect-logout:hover {
+    color: var(--primary-color-text);
+    transition: color 0.3s ease-in-out;
+    transform-origin: top;
+}
+.hover-effect-logout {
+    position: relative;
+    text-decoration: none;
+    cursor: pointer;
+    padding: 1.5rem;
+    width: 100%;
+    transition: color 0.4s ease-in-out;
+    transform-origin: left;
+    color: var(--text-color);
+}

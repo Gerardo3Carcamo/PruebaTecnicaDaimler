@@ -1,0 +1,34 @@
+<div class="p-fluid p-formgrid grid">
+    <div class="field col-3">
+        <span>
+            <fa-icon [icon]="userNameIcon" style="font-size: 1.1rem; color: blue;"></fa-icon>
+            <label class="ml-2">Nombre completo</label>
+        </span>
+        <input [(ngModel)]="userName" pInputText class="mt-2" placeholder="Juan Lopéz"/>
+    </div>
+    <div class="field col-3">
+        <span>
+            <fa-icon [icon]="phoneIcon" style="font-size: 1.1rem; color: blue;"> </fa-icon>
+            <label class="ml-2">Núm. Telefono</label>
+        </span>
+        <p-inputMask [(ngModel)]="phone" mask="999-999-9999" placeholder="999-999-9999" styleClass="mt-2"></p-inputMask>
+    </div>
+    <div class="field col-3">
+        <span>
+            <fa-icon [icon]="roleIcon" style="font-size: 1.1rem; color: blue;"></fa-icon>
+            <label class="ml-2">Rol de usuario</label>
+        </span>
+        <p-dropdown [(ngModel)]="role" styleClass="mt-2" appendTo="body" placeholder="Administrador"
+        [options]="rolesDrop" optionLabel="name" optionValue="id"></p-dropdown>
+    </div>
+    <div class="field col-3">
+        <span>
+            <fa-icon [icon]="passwordIcon" style="font-size: 1.1rem; color: blue;"></fa-icon>
+            <label class="ml-2">Contraseña</label>
+        </span>
+        <p-password [(ngModel)]="password" [toggleMask]="true" styleClass="mt-2" appendTo="body" placeholder="********"></p-password>
+    </div>
+    <div class="field col-12">
+        <p-button label="Guardar" styleClass="p-button-success" (click)="createNewAccount()"></p-button>
+    </div>
+</div>

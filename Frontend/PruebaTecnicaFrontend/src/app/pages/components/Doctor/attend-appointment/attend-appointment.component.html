@@ -1,0 +1,79 @@
+<div class="p-fluid p-formgrid grid p-2">
+    <div class="field col-4">
+        <label>Seleccione una cita</label>
+        <p-dropdown [options]="patients" optionLabel="patientName" optionValue="appointmentId" placeholder="Seleccione un paciente"
+            [filter]="true" filterBy="name" (onChange)="getPreviousAppointments()" [(ngModel)]="appointmentId"
+            [showClear]="true" (onClear)="clearData()"></p-dropdown>
+    </div>
+    <div class="field col-8"></div>
+    <div class="field col-12">
+        <div class="flex justify-content-center align-items-center">
+            <fa-icon [icon]="tableIcon" style="font-size: 2rem; margin-right: .5rem; color: blue;"></fa-icon>
+            <h2 class="text-center my-0">Historial de consultas del paciente: {{getPatientName(appointmentId)}}</h2>
+        </div>
+    </div>
+    <div class="field col-12">
+        <p-table [value]="previousAppointments" scrollHeight="400px" [rows]="10" [paginator]="true" [rowsPerPageOptions]="[10, 25, 50]">
+            <ng-template pTemplate="header">
+                <tr class="center-text">
+                    <th style="width: 15%;">Id</th>
+                    <th style="width: 15%;">Fecha de consulta</th>
+                    <th style="width: 15%;">Doctor que atendio</th>
+                    <th style="width: 55%;">Observaciones</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-consulta>
+                <tr class="center-text">
+                    <td style="width: 15%;">{{consulta.appointmentId}}</td>
+                    <td style="width: 15%;">{{consulta.tsAppointment | date: 'YYYY-MM-dd'}}</td>
+                    <td style="width: 15%;">{{consulta.doctor}}</td>
+                    <td style="width: 55%;">{{consulta.observations}}</td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </div>
+    <div class="field col-6">
+        <div class="flex justify-content-center align-items-center">
+            <fa-icon [icon]="medicinesIcon" style="font-size: 1.2rem; margin-right: .5rem; color: blue;"></fa-icon>
+            <h4>Recetar medicamentos</h4>
+        </div>
+        <p-table [value]="medicines" scrollHeight="18rem" [rows]="10" [paginator]="true" [rowsPerPageOptions]="[10, 25, 50]">
+            <ng-template pTemplate="header">
+                <tr class="center-text">
+                    <th>Id</th>
+                    <th>Nombre del medicamento</th>
+                    <th>¿Aplica?</th>
+                    <th>Cantidad</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-consulta>
+                <tr class="center-text">
+                    <td>{{consulta.id}}</td>
+                    <td>{{consulta.name}}</td>
+                    <td>
+                        <p-checkbox [(ngModel)]="consulta.apply" [binary]="true" inputId="binary"></p-checkbox>
+                    </td>
+                    <td>
+                        <p-inputNumber *ngIf="consulta.existingQuantity > 0" [disabled]="!consulta.apply" [(ngModel)]="consulta.quantity" mode="decimal"
+                        [showButtons]="true" inputId="stacked" [max]="consulta.existingQuantity" [min]="1"
+                        inputId="withoutgrouping" [useGrouping]="false"></p-inputNumber>
+                        <h3 *ngIf="consulta.existingQuantity == 0" style="color: red;">Sin stock por el momento</h3>
+                        <small *ngIf="consulta.existingQuantity > 0">*{{consulta.existingQuantity}} en stock</small>
+                    </td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </div>
+    <div class="field col-6">
+        <div class="flex justify-content-center align-items-center">
+            <fa-icon [icon]="observationsIcon" style="font-size: 1.2rem; margin-right: .5rem; color: blue;"></fa-icon>
+            <h4>Observaciones del paciente</h4>
+        </div>
+        <textarea rows="15" cols="30" maxlength="250" [(ngModel)]="observations" pInputTextarea></textarea>
+        <small>*Max 250 caracteres</small>
+    </div>
+    <div class="field col-12">
+        <p-button label="Terminar cita medica" icon="pi pi-save" styleClass="p-button-success" [disabled]="appointmentId == undefined"
+        (click)="saveAttendedAppointment()"></p-button>
+    </div>
+</div>

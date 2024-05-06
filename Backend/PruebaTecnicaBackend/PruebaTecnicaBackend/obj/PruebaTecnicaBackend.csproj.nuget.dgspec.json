@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\000093883\\Desktop\\PruebaTecnicaDaimler\\PruebaTecnicaBackend\\PruebaTecnicaBackend\\PruebaTecnicaBackend.csproj": {}
+    "C:\\Users\\000093883\\Desktop\\PruebaTecnicaDaimler\\PruebaTecnicaDaimler\\Backend\\PruebaTecnicaBackend\\PruebaTecnicaBackend\\PruebaTecnicaBackend.csproj": {}
   },
   "projects": {
-    "C:\\Users\\000093883\\Desktop\\PruebaTecnicaDaimler\\PruebaTecnicaBackend\\PruebaTecnicaBackend\\PruebaTecnicaBackend.csproj": {
+    "C:\\Users\\000093883\\Desktop\\PruebaTecnicaDaimler\\PruebaTecnicaDaimler\\Backend\\PruebaTecnicaBackend\\PruebaTecnicaBackend\\PruebaTecnicaBackend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\000093883\\Desktop\\PruebaTecnicaDaimler\\PruebaTecnicaBackend\\PruebaTecnicaBackend\\PruebaTecnicaBackend.csproj",
+        "projectUniqueName": "C:\\Users\\000093883\\Desktop\\PruebaTecnicaDaimler\\PruebaTecnicaDaimler\\Backend\\PruebaTecnicaBackend\\PruebaTecnicaBackend\\PruebaTecnicaBackend.csproj",
         "projectName": "PruebaTecnicaBackend",
-        "projectPath": "C:\\Users\\000093883\\Desktop\\PruebaTecnicaDaimler\\PruebaTecnicaBackend\\PruebaTecnicaBackend\\PruebaTecnicaBackend.csproj",
+        "projectPath": "C:\\Users\\000093883\\Desktop\\PruebaTecnicaDaimler\\PruebaTecnicaDaimler\\Backend\\PruebaTecnicaBackend\\PruebaTecnicaBackend\\PruebaTecnicaBackend.csproj",
         "packagesPath": "C:\\Users\\000093883\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\000093883\\Desktop\\PruebaTecnicaDaimler\\PruebaTecnicaBackend\\PruebaTecnicaBackend\\obj\\",
+        "outputPath": "C:\\Users\\000093883\\Desktop\\PruebaTecnicaDaimler\\PruebaTecnicaDaimler\\Backend\\PruebaTecnicaBackend\\PruebaTecnicaBackend\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\000093883\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -44,6 +44,20 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.5.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

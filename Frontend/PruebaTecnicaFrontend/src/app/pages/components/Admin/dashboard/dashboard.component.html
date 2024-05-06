@@ -1,0 +1,12 @@
+<div class="p-fluid p-formgrid grid p-2">
+    <div class="field col-8 sm:col-12 md:col-12 lg:col-8 xl:col-8">
+        <h2 class="text-center">Citas atendidas por día</h2>
+        <app-mix-chart [labels]="appointments.labels" [datasets]="appointments.dataSet"
+        [height]="'26rem'"></app-mix-chart>
+    </div>
+    <div class="field col-4 sm:col-12 md:col-12 lg:col-4 xl:col-4">
+        <h2 class="text-center">Medicamentos recetados por doctor</h2>
+        <app-mix-chart [labels]="medicines.labels" [datasets]="medicines.dataSet"
+        [height]="'26rem'"></app-mix-chart>
+    </div>
+</div>

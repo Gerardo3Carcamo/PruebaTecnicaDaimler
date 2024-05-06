@@ -1,0 +1,33 @@
+<div style="position: fixed; bottom: 8.4rem; right: 5rem;">
+    <p-speedDial [model]="items" direction="up"></p-speedDial>
+</div>
+<div class="p-fluid p-formgrid grid p-2">
+    <div class="field col-4 sm:col-12 md:col-12 lg:col-3 xl:col-3" *ngFor="let appointment of appointments">
+        <p-card>
+            <ng-template pTemplate="header"> 
+                <div class="flex justify-content-center align-items-center flex-wrap">
+                    <fa-icon [icon]="doctorIcon" style="font-size: 1.9rem; margin-right: .5rem; color: blue;"></fa-icon> 
+                    <h2 class="text-center m-0 p-0">{{appointment.doctor + ' - ' + (appointment.tsAppointment | date: 'YYYY/MM/dd')}}</h2>
+                </div>
+            </ng-template>
+            <div class="flex justify-content-center align-items-center" *ngIf="appointment.observations == null && appointment.state == 'Programada'">
+                <fa-icon *ngIf="dateDiff(appointment.tsAppointment) < 0" [icon]="clockIcon" 
+                style="font-size: 1.9rem; margin-right: .5rem; color: red;" animation="beat"></fa-icon> 
+                <h2 class="text-center">Aun no se atiende la cita médica</h2>
+            </div>
+            <p *ngIf="appointment.observations != null && appointment.state != 'Programada'">{{appointment.observations}}</p>
+            <ng-template pTemplate="footer">
+                <div class="p-fluid p-formgrid grid" *ngIf="appointment.state == 'Programada'">
+                    <div class="field col-6 sm:col-12 md:col-12 lg:col-6 xl:col-6 my-0 py-1">
+                        <p-button styleClass="p-button-warning" icon="pi pi-exclamation-triangle" label="Cambiar consulta"
+                        pTooltip="Solicitar cambio de fecha" (click)="changeAppointmentDate(appointment.appointmentId)"></p-button>
+                    </div>
+                    <div class="field col-6 sm:col-12 md:col-12 lg:col-6 xl:col-6 my-0 py-1">
+                        <p-button styleClass="p-button-danger" icon="pi pi-times" label="Cancelar consulta"
+                        pTooltip="Cancelar consulta" (click)="cancelAppointment(appointment.appointmentId)"></p-button>
+                    </div>
+                </div>
+            </ng-template>
+        </p-card>
+    </div>
+</div>

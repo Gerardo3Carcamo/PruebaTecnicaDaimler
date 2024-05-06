@@ -1,0 +1,34 @@
+<div class="p-fluid p-formgrid grid p-2">
+    <div class="field col-12">
+        <p-table *ngIf="medicines" [tableStyle]="{ 'min-width': '50rem' }" [value]="medicines" #dtMedicines
+        [globalFilterFields]="['medicineName', 'medicineDescription', 'quantity', 'patientName']">
+            <ng-template pTemplate="caption">
+                <div class="flex">
+                    <button type="button" pButton pRipple icon="pi pi-file-excel" (click)="excel.exportExcel('Medicamentos', medicines)" class="p-button-success mr-2" pTooltip="XLS" tooltipPosition="bottom"></button>
+                    <button type="button" pButton pRipple icon="pi pi-file-pdf" (click)=" excel.exportPdf('Medicamentos', cols, medicines)" class="p-button-danger mr-2" pTooltip="PDF" tooltipPosition="bottom"></button>
+                    <span class="p-input-icon-left ml-auto">
+                        <i class="pi pi-search"></i>
+                        <input pInputText type="text" (input)="dtMedicines.filterGlobal($event.target['value'], 'contains')" 
+                        placeholder="Search keyword" />
+                    </span>
+                </div>
+            </ng-template>
+            <ng-template pTemplate="header">
+                <tr class="center-text">
+                    <th>Nombre del medicamento</th>
+                    <th>Descripción</th>
+                    <th>Cantidad recetada</th>
+                    <th>Fecha de Prescripción</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-product>
+                <tr class="center-text">
+                    <td>{{product.medicineName}}</td>
+                    <td>{{product.medicineDescription}}</td>
+                    <td>{{product.quantity}}</td>
+                    <td>{{product.prescriptionDate | date: 'YYYY-MM-dd'}}</td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </div>
+</div>

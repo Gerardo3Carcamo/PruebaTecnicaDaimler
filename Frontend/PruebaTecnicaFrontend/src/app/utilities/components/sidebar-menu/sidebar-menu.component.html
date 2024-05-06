@@ -1,0 +1,44 @@
+<p-sidebar styleClass="w-30rem" position="right" [(visible)]="_visible" (onHide)="hide(false)">
+    <ng-template pTemplate="header">
+        <div style="display: flex; justify-content: center; align-items: center; width: 100%;" >
+            <fa-icon [icon]="_appIcon" style="font-size: 4rem;"></fa-icon>
+            <h2 class="text-center ml-2">{{_appTitle}}</h2>
+        </div>
+    </ng-template>
+    <ul class="menu">
+        <li *ngFor="let item of _items" >
+            <div style="border-radius: 10px; overflow-y: hidden; align-content: center; 
+            width: 100%; max-width: 100%; max-height: 3.8rem;" 
+            class="container" *ngIf="hasPermissions(item)" (click)="redirect(item.Url)">
+                <span [ngClass]="_hoverEffect === true ? 'hover-effect' : 'span'" style="width: 100%;">
+                    <fa-icon [icon]="item.Icon"></fa-icon>
+                    <li style="padding-left: .5rem;">{{item.Title}}</li>
+                </span>
+            </div>
+            <div style="border-radius: 10px; overflow-y: hidden; align-content: center; 
+            width: 100%; max-width: 100%; max-height: 3.8rem;" 
+            pTooltip="No cuenta con los permisos suficientes para ver este apartado, favor de solicitarlos al administrador del sistema"
+            class="container hover-effect-disabled" *ngIf="!hasPermissions(item)">
+                <span  style="width: 100%;">
+                    <fa-icon [icon]="item.Icon"></fa-icon>
+                    <li style="padding-left: .5rem;">{{item.Title}}</li>
+                    
+                </span>
+                <div class="justify-content-end">
+                    <fa-icon style="color: #f44336; font-size: 1.1rem" class="pl-2" [icon]="lock"></fa-icon>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div style="border-radius: 10px; overflow-y: hidden; align-content: center; 
+            width: 100%; max-width: 100%; max-height: 3.8rem;" 
+            class="container" (click)="logout()">
+                <span class="hover-effect-logout" style="width: 100%;">
+                    <fa-icon [icon]="logoutIcon"></fa-icon>
+                    <li style="padding-left: .5rem;">Cerrar sesión</li>
+                </span>
+            </div>
+            
+        </li>
+    </ul>
+</p-sidebar>

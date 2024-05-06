@@ -1,0 +1,55 @@
+<p-chart [height]="height" (onDataSelect)="onDataSelect($event)" type="bar" [data]="stackedData"
+    [options]="stackedOptions"></p-chart>
+<div class="grid p-fluid text-center" *ngIf="paginator">
+    <div class="col">{{chartPaginatorPage}} de {{maxChartPaginator}} páginas</div>
+    <div class="col">
+        <p-button icon="pi pi-arrow-left" *ngIf="chartPaginatorPage!=1" (click)="changePage(-1)"
+            styleClass="p-button-rounded p-button-info p-button-text p-button-raised"></p-button>
+    </div>
+    <div class="col">{{chartPaginatorPage}}</div>
+    <div class="col">
+        <p-button icon="pi pi-arrow-right" *ngIf="chartPaginatorPage<maxChartPaginator" (click)="changePage(1)"
+            styleClass="p-button-rounded p-button-info p-button-text p-button-raised"></p-button>
+    </div>
+    <div class="col" *ngIf="paginatorSizeChange">
+        <p-dropdown [options]="chartPaginatorOptions" [(ngModel)]="selectedPaginatorSize"
+            (onChange)="changePageSize()"></p-dropdown>
+    </div>
+    <div class="col">
+        <p-button [icon]="(orderIndicator==1?'pi pi-sort-amount-down':'pi pi-sort-amount-up')" (click)="changeOrder()"
+            styleClass="p-button-rounded p-button-info p-button-text p-button-raised"></p-button>
+    </div>
+</div>
+<div style="width:100%;overflow:auto">
+    <hr />
+    <table *ngIf="showTable" class="table table-striped table-sm text-center table-bordered" style="min-width: 100%;">
+        <thead class="thead-dark">
+            <tr>
+                <th> <i class="pi pi-refresh" (click)="restoreElements()"></i></th>
+                <th style="white-space: nowrap;" *ngFor="let item of _labels; index as i"> <i class="pi pi-times"
+                        (click)="removeElement(i)"></i> {{item}}</th>
+                <th *ngIf="showTotal">Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let ds of _datasets">
+                <th style="white-space: nowrap;"> {{ds.label}}</th>
+                <td pRipple (click)="clickCell(lb,ds.label)" style="white-space: nowrap;cursor: pointer;"
+                    *ngFor="let lb of _labels;let i = index">
+                    {{ds.data[i]|number: '1.0-2'}} {{ds.sufijo}}
+                </td>
+                <th *ngIf="showTotal" pRipple (click)="clickCell(null,ds.label)"
+                    style="white-space: nowrap;cursor: pointer;"> {{sum(ds.data)|number: '1.0-2'}} {{ds.sufijo}}</th>
+            </tr>
+            <tr *ngIf="showTotal">
+                <th style="white-space: nowrap;"> Total: </th>
+                <td pRipple (click)="clickCell(lb,null)" style="white-space: nowrap;cursor: pointer;"
+                    *ngFor="let lb of _labels;let i = index">
+                    {{ sumByIndex(i)|number: '1.0-2'}}
+                </td>
+                <th pRipple (click)="clickCell(null,null)" style="white-space: nowrap;cursor: pointer;">{{
+                    sumTotal()|number: '1.0-2'}}</th>
+            </tr>
+        </tbody>
+    </table>
+</div>

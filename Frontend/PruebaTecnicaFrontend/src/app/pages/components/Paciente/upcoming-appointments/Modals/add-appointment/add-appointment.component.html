@@ -1,0 +1,16 @@
+<div class="p-fluid p-formgrid grid p-2">
+    <div class="field col-6">
+        <label>Seleccione un doctor:</label>
+        <p-dropdown appendTo="body" [options]="doctors" optionLabel="name" optionValue="id"
+        placeholder="Seleccione un doctor" [(ngModel)]="selectedDoctor"></p-dropdown>
+    </div>
+    <div class="field col-6">
+        <label>Seleccione fecha para la consulta:</label>
+        <p-calendar [showIcon]="true" appendTo="body" placeholder="Fecha: 01/01/2024"
+        [(ngModel)]="selectedDate"></p-calendar>
+    </div>
+    <div class="field col-12">
+        <p-button styleClass="p-button-success" icon="pi pi-save" label="Guardar cita"
+        (click)="saveAppointment()"></p-button>
+    </div>
+</div>

@@ -1,0 +1,5 @@
+<app-sidebar-menu [visible]="showMenu" (hideMenu)="hide($event)" appTitle="Hospitium Menú" [appIcon]="appIcon" [items]="pages" [hoverEffect]="true"></app-sidebar-menu>
+<div class="layout-config-button" style="z-index: 1000;" (click)="show()" pTooltip="Abrir menú">
+    <fa-icon style="font-size: 1.2rem;" [icon]="bars"></fa-icon>
+</div>
+<router-outlet></router-outlet>
