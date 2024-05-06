@@ -1,2 +1,26 @@
-# PruebaTecnicaDaimler
- Prueba Técnica.  Este repositorio contiene el código del backend desarrollado en ASP.NET Core 6, el frontend en Angular 15.2.1, scripts SQL para la base de datos en SQL Server, y un archivo README.md con instrucciones de instalación y uso.  El backend proporciona la lógica de negocio para el sistema, implementado en ASP.NET Core 6. El frontend, desarrollado con Angular 15.2.1, ofrece una interfaz de usuario moderna y receptiva para interactuar con los datos. Los scripts SQL incluidos se utilizan para inicializar y mantener la base de datos en SQL Server.  Por favor, consulte el archivo README.md para obtener instrucciones detalladas sobre cómo configurar y ejecutar el sistema.
+# Proyecto Backend ASP.NET Core y Frontend Angular
+
+Este repositorio contiene un proyecto Backend desarrollado en ASP.NET Core utilizando Entity Framework, junto con un proyecto Frontend construido en Angular 15. 
+
+## Configuración del Backend
+
+Para cambiar la conexión de la base de datos, dirígete al archivo `appsettings.Development.json`. En este archivo, encontrarás la cadena de conexión en la propiedad `DefaultConnection` dentro de `ConnectionStrings`. Se recomienda cambiar únicamente el `serverName` para evitar problemas.
+
+## Configuración del Frontend
+
+El Frontend está desarrollado en Angular 15 y utiliza la biblioteca de UI de PrimeNg. Para ejecutar correctamente el Frontend, sigue estos pasos:
+
+1. Ejecuta `npm i` para instalar las dependencias.
+2. Luego, ejecuta `ng serve -o` para correr el Frontend.
+
+## Base de datos
+
+La base de datos está implementada en SQL Server. Es crucial ejecutar el script proporcionado en este repositorio para asegurar el correcto funcionamiento del proyecto. Encontrarás el script en la carpeta correspondiente.
+
+## Información de contacto
+
+**Nombre:** Gerardo Rodrigo Chavez Carcamo  
+**Correo:** gerca4401@gmail.com  
+**Número de teléfono:** 8443832692
+
+¡Disfruta explorando el proyecto! Si tienes alguna pregunta o problema, no dudes en levantar un issue o contactar al equipo de desarrollo. ¡Gracias por tu interés!
