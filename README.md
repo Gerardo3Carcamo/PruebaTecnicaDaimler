@@ -16,6 +16,12 @@ El Frontend está desarrollado en Angular 15 y utiliza la biblioteca de UI de Pr
 ## Base de datos
 
 La base de datos está implementada en SQL Server. Es crucial ejecutar el script proporcionado en este repositorio para asegurar el correcto funcionamiento del proyecto. Encontrarás el script en la carpeta correspondiente.
+Al ejecutar el script, podremos ingresar a la aplicacion con las siguientes credenciales:
+1. `Administrador -> phone: 8443832692 password: Admin1.$`
+2. `Doctor -> phone: 8441309847 password: Doct_1#`
+3. `Doctor -> phone: 8441234567 password: Doct_2#`
+4. `Paciente -> phone: 8448065676 password: Pac_$021`
+5. `Paciente -> phone: 8440987654 password: Pac_$021`
 
 ## Información de contacto
 
